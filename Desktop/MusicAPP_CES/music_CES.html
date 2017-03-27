@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+  <link rel="stylesheet" type="text/css"href="mystyle.css">
+  <script src="http://code.angularjs.org/1.1.5/angular.min.js" type="text/javascript">
+</script>
+  <script src="myapp.module.js" type="text/javascript">
+</script>
+  <script src="main.controller.js" type="text/javascript">
+</script>
+
+  <title>MyMusicApp_CES</title>
+</head>
+
+<body ng-controller="MainController">
+  <form>
+    <input ng-model="artistget" /> <button ng-click="get(artistget)">click for
+    artist</button> <button ng-click="fetch(artistget)">click for songs</button> Result :
+  </form>
+
+  <ul ng-repeat="artist in resultget">
+    <li>{{ artist.items.0.name}}</li>
+
+    <li>{{ artist.items.0.genres}}</li>
+
+    <li>{{ artist.items.1.genres}}</li>
+
+    <li style="list-style: none; display: inline">
+      <div><img ng-src="{{ artist.items.0.images.0.url}}" width="150" height=
+      "150" /></div><a ng-href=
+      "https://api.spotify.com/v1/search?type=album&amp;query={{artist.items.0.name}}"
+      ng-hide="IsHidden">Album View</a> <a ng-href=
+      "https://api.spotify.com/v1/search?type=track&amp;query={{artist.items.0.name}}"
+      ng-hide="IsHidden">Song View</a>
+    </li>
+  </ul><br />
+  <label  ng-hide="IsHidden">Songs:</label>
+
+  <ul ng-repeat="track in result">
+    <li><a ng-href="{{track.items.0.preview_url}}">{{track.items.0.name}}
+    </a></li>
+
+    <li><a ng-href="{{track.items.1.preview_url}}">{{track.items.1.name}}
+    </a></li>
+
+    <li><a ng-href="{{track.items.2.preview_url}}">{{track.items.2.name}}
+    </a></li>
+
+    <li><a ng-href="{{track.items.3.preview_url}}">{{track.items.3.name}}
+    </a></li>
+
+    <li><a ng-href="{{track.items.4.preview_url}}">{{track.items.4.name}}
+    </a></li>
+
+    <li><a ng-href="{{track.items.5.preview_url}}">{{track.items.5.name}}
+    </a></li>
+
+    <li><a ng-href="{{track.items.6.preview_url}}">{{track.items.6.name}}
+    </a></li>
+
+    <li><a ng-href="{{track.items.7.preview_url}}">{{track.items.7.name}}
+    </a></li>
+  </ul><br />
+</body>
+</html>
