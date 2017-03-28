@@ -25,7 +25,7 @@ function MainController( $scope, $http ) {
 			.error( function() {
 				console.log( "error" );
 			} );
-		/* "album view" link to be apperared when but is clicked*/
+		/* "album view" link to be apperared when it is clicked*/
 		$scope.IsHidden = $scope.IsHidden ? false : true;
 	};
 
