@@ -5,4 +5,4 @@ Followed:
 2.use of service
 3.use of angular-spotify.js
 4.spotify functions.
-use of ng-change directive.
+5.use of ng-change directive.
