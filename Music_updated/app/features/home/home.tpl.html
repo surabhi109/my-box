@@ -1,0 +1,28 @@
+ <div class="search">
+    <a ui-sref="home">Spotify Assignment</a><br />
+    <!-- ControllerAs with view syntax-->
+    <br />
+
+    <form>
+      <input type="text" ng-model="vm.searchartist" ng-change="vm.searchArtist()"
+      placeholder="Search for an artist" /> Result :
+    </form>
+  </div>
+
+  <div class="result">
+    <ul>
+      <li ng-repeat="artist in vm.artists">
+        <a class="artist-album" ng-href="{{artist.external_urls.spotify}}" target=
+        "_blank"><img ng-src="{{artist.images[0].url}}" alt="" /></a>
+
+        <div class="artist-album-details">
+          {{artist.name}}
+        </div><a ng-href=
+        "https://api.spotify.com/v1/search?type=album&amp;query={{artist.name}}" ng-hide=
+        "IsHidden" target="_blank">Album View</a> <a ng-href=
+        "https://api.spotify.com/v1/search?type=track&amp;query={{artist.name}}" ng-hide=
+        "IsHidden" target="_blank">Song View</a>
+      </li>
+    </ul>
+  </div>
+
