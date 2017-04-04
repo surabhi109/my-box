@@ -1,22 +1,34 @@
 (function () {
-    angular
-        .module('myApp', ['spotify']) // one component per file.
-        .controller('MainController', MainController); // Used named functions instead of passing an anonymous function
-    MainController.$inject['spotify', 'myservice'];
+  'use strict';
+  angular
+    .module('myApp')
+    .controller('MainController', MainController);
 
-    function MainController(Spotify, myservice) {
-        var vm = this; //controllerAs with vm
+  MainController.$inject = ['$scope', 'myservice','spotify'];
 
-        vm.searchArtist = function () {
+  function MainController($scope, myservice, spotify) {
+    var vm = this;
 
-            vm.fromservice = myservice.search(vm.searchartist, 'artist').then(function (data) {
+    
+
+    vm.searchArtist = function (keywords) {
+      if (keywords) {
+       vm.fromservice = myservice.search(vm.searchartist, 'artist').then(function (data) {
                 vm.artists = data.artists.items;
                 vm.albums = data.albums.items;
                 vm.res = data;
+           console.log(vm.res);
 
 
             });
             vm.IsHidden = vm.IsHidden ? false : true;
-        };
+        }
+       else {
+        vm.res = null;
+      }
+    
     };
-})(); 
+  }
+
+})();
+
