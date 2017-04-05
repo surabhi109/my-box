@@ -1,9 +1,10 @@
- <div class="search">
+<div ng-controller="MainController as vm">
+<div class="search">
     <a ui-sref="home">Spotify Assignment</a><br />
     <!-- ControllerAs with view syntax-->
     <br />
 
-    <form>
+    <form >
       <input type="text" ng-model="vm.searchartist" ng-change="vm.searchArtist()"
       placeholder="Search for an artist" /> Result :
     </form>
@@ -26,3 +27,4 @@
     </ul>
   </div>
 
+</div> 
