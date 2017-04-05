@@ -16,7 +16,7 @@
     $stateProvider.state('home', {
       url: '/',
       templateUrl: 'app/features/home/home.tpl.html',
-      controller: 'MusicController',
+      controller: 'MainController',
       controllerAs: 'vm'
     });
   }
