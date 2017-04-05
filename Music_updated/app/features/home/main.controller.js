@@ -4,16 +4,16 @@
     .module('myApp')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$scope', 'myservice','spotify'];
+  MainController.$inject = ['$scope', 'myservice','Spotify'];
 
-  function MainController($scope, myservice, spotify) {
+  function MainController($scope, myservice,Spotify) {
     var vm = this;
 
     
 
     vm.searchArtist = function (keywords) {
       if (keywords) {
-       vm.fromservice = myservice.search(vm.searchartist, 'artist').then(function (data) {
+                myservice.searchArtist(vm.searchartist, 'artist').then(function (data) {
                 vm.artists = data.artists.items;
                 vm.albums = data.albums.items;
                 vm.res = data;
@@ -24,11 +24,10 @@
             vm.IsHidden = vm.IsHidden ? false : true;
         }
        else {
-        vm.res = null;
+        vm.res = null
       }
     
     };
   }
 
 })();
-
