@@ -4,9 +4,9 @@
     .module('myApp')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$scope', 'myservice','Spotify'];
+  MainController.$inject = ['$scope', 'myservice'];
 
-  function MainController($scope, myservice,Spotify) {
+  function MainController($scope, myservice) {
     var vm = this;
 
     
