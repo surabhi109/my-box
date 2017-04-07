@@ -4,16 +4,16 @@
     .module('myApp')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$scope', 'myservice'];
+  MainController.$inject = ['$scope', 'myService'];
 
-  function MainController($scope, myservice) {
+  function MainController($scope, myService) {
     var vm = this;
 
     
 
     vm.searchArtist = function (keywords) {
       if (keywords) {
-                myservice.search(vm.searchartist, 'artist').then(function (data) {
+                myService.search(vm.searchartist, 'artist').then(function (data) {
                 vm.artists = data.artists.items;
                 vm.albums = data.albums.items;
                 vm.res = data;
