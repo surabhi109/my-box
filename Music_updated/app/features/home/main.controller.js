@@ -13,7 +13,7 @@
 
     vm.searchArtist = function (keywords) {
       if (keywords) {
-                myservice.searchArtist(vm.searchartist, 'artist').then(function (data) {
+                myservice.search(vm.searchartist, 'artist').then(function (data) {
                 vm.artists = data.artists.items;
                 vm.albums = data.albums.items;
                 vm.res = data;
