@@ -2,11 +2,11 @@
     'use strict';
     angular
         .module('myApp')
-        .service('myservice', myservice);
+        .service('myservice', myService);
 
-    myservice.$inject = ['Spotify'];
+    myService.$inject = ['Spotify'];
 
-    function myservice(Spotify) {
+    function myService(Spotify) {
         return {
             search: searchArtist
         };
